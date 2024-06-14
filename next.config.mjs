@@ -3,7 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
 
   images: {
-    domains: ['files.stripe.com'],
+    remotePatterns: [
+      {
+        hostname: 'files.stripe.com',
+        pathname: '**',
+        protocol: 'https',
+      },
+    ],
   },
 }
 

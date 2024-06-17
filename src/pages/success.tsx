@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next'
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -17,20 +18,28 @@ interface SuccessProps {
 
 export default function Success({ customerName, product }: SuccessProps) {
   return (
-    <Container>
-      <h1>Compra efetuada!</h1>
+    <>
+      <Head>
+        <title>Compra efetuada | Ignite Shop</title>
 
-      <ImageContainer>
-        <Image alt="" src={product.imageUrl} width={120} height={110} />
-      </ImageContainer>
+        <meta name="robots" content="noindex" />
+      </Head>
 
-      <p>
-        Uhuul <strong>{customerName}</strong>, sua{' '}
-        <strong>{product.name}</strong> já está a caminho da sua casa.
-      </p>
+      <Container>
+        <h1>Compra efetuada!</h1>
 
-      <Link href={'/'}>Voltar ao catalogo</Link>
-    </Container>
+        <ImageContainer>
+          <Image alt="" src={product.imageUrl} width={120} height={110} />
+        </ImageContainer>
+
+        <p>
+          Uhuul <strong>{customerName}</strong>, sua{' '}
+          <strong>{product.name}</strong> já está a caminho da sua casa.
+        </p>
+
+        <Link href={'/'}>Voltar ao catalogo</Link>
+      </Container>
+    </>
   )
 }
 

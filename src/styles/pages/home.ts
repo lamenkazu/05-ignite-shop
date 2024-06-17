@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { styled } from '..'
 
 export const Container = styled('main', {
@@ -8,7 +10,7 @@ export const Container = styled('main', {
   minHeight: 656,
 })
 
-export const Product = styled('a', {
+export const Product = styled(Link, {
   position: 'relative',
 
   display: 'flex',
@@ -48,6 +50,7 @@ export const Product = styled('a', {
 
     strong: {
       fontSize: '$lg',
+      color: '$gray100',
     },
 
     span: {
